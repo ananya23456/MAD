@@ -1,0 +1,40 @@
+package com.example.frame_layout;
+
+import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageView;
+import android.widget.Button;
+
+import androidx.activity.EdgeToEdge;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.graphics.Insets;
+import androidx.core.view.ViewCompat;
+import androidx.core.view.WindowInsetsCompat;
+
+public class MainActivity extends AppCompatActivity {
+
+    ImageView iv;
+    Button btn;
+    int images[]={
+            R.drawable.greenary,R.drawable.spring
+    };
+    int currentindex = 0;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+        setContentView(R.layout.activity_main);
+        iv = findViewById(R.id.imgv1);
+        btn = findViewById(R.id.btn);
+    }
+    public void Click(View view){
+        if(currentindex == 0) {
+            iv.setImageResource(images[1]);
+            currentindex = 1;
+        } else {
+            iv.setImageResource(images[0]);
+            currentindex = 0;
+        }
+    }
+}
